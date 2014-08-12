@@ -1,0 +1,18 @@
+Package: swfscMisc
+Type: Package
+Title: Miscellaneous Functions for Southwest Fisheries Science Center
+Version: 1.0.1
+Date: 2014-08-11
+Author: Eric Archer
+Maintainer: Eric Archer <eric.archer@noaa.gov>
+Description: Collection of conversion, analytical, geodesic, mapping, and
+    plotting functions. Used to support packages and code written by
+    researchers at the Southwest Fisheries Science Center of the National
+    Oceanic and Atmospheric Administration.
+Imports: maps
+Depends: mapdata
+License: GPL (>= 2)
+Packaged: 2014-08-11 21:46:09 UTC; eric.archer
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2014-08-12 06:53:33

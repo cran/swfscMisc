@@ -42,14 +42,14 @@
 #' map("worldHires", fill = TRUE, col = "wheat3", xlim = lon.range, ylim = lat.range)
 #' points(-117.24, 32.86, pch = 19, col = "red")
 #' polygon(cart.earth, border = "red", lwd = 3)
-#' lat.lon.axes(lon.range, lat.range, n = 3)
+#' lat.lon.axes(n = 3)
 #' box(lwd = 2)
 #' mtext("poly.type = 'cart.earth'", line = 3)
 #' 
 #' map("worldHires", fill = TRUE, col = "wheat3", xlim = lon.range, ylim = lat.range)
 #' points(-117.24, 32.86, pch = 19, col = "red")
 #' polygon(gc.earth, border = "red", lwd = 3)
-#' lat.lon.axes(lon.range, lat.range, n = 3)
+#' lat.lon.axes(n = 3)
 #' box(lwd = 2)
 #' mtext("poly.type = 'gc.earth'", line = 3)
 #' 

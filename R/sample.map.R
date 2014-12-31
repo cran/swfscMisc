@@ -6,14 +6,18 @@
 #' @description Plot a set of samples on a world map.
 #' 
 #' @param lon,lat vectors giving the longitude and latitude of points to plot.
-#' @param lon.range,lat.range vectors giving the minimum and maximum longitude and latitude of the map.
+#' @param lon.range,lat.range vectors giving the minimum and maximum longitude 
+#'   and latitude of the map. If the irst value in \code{lon.range} is greater 
+#'   than the second value, then a Pacific-centric map (\code{\link[mapdata]{world2Hires}}) 
+#'   is used and continents will not be filled in.
 #' @param main main title for the plot.
 #' @param pch point symbol to use.
 #' @param pt.cex point size to use.
 #' @param col point color.
 #' @param bg background color of point.
-#' @param n,lon.n,lat.n the number of tick marks desired. Can be specified separately for longitude (\code{lon.n}) 
-#' or latitude (\code{lat.n}). See \code{\link{pretty}} for more details.
+#' @param n,lon.n,lat.n the number of tick marks desired. Can be specified 
+#'   separately for longitude (\code{lon.n}) or latitude (\code{lat.n}). 
+#'   See \code{\link{pretty}} for more details.
 #' 
 #' @return original \code{\link{par}} settings for \code{mar} and \code{oma}.
 #' 
@@ -29,9 +33,22 @@
 #' lat.range <- c(32.4, 33.6)
 #' lon.range <- c(-118.6, -117)
 #' sample.map(lat, lon, lat.range, lon.range)
+#' 
+#' # Some random points in the Pacific
+#' lat <- runif(30, 20, 50)
+#' lon <- c(runif(15, 150, 180), runif(15, -180, -120))
+#' lat.range <- c(10, 75)
+#' lon.range <- c(110, -110)
+#' sample.map(lat, lon, lat.range, lon.range)
 
 sample.map <- function(lat, lon, lat.range, lon.range, main = NULL, pch = 19, pt.cex = 1, 
                        col = "black", bg = col, n = 5, lon.n = n, lat.n = n) {
+  pacific.cent <- lon.range[1] > lon.range[2]
+  if(pacific.cent) {
+    lon <- ifelse(lon < 0, 360 + lon, lon)
+    lon.range <- ifelse(lon.range < 0, 360 + lon.range, lon.range)
+  }
+  
   has.loc <- !is.na(lon) & !is.na(lat) 
   in.lon.range <- lon >= min(lon.range) & lon <= max(lon.range)
   in.lat.range <- lat >= min(lat.range) & lat <= max(lat.range)
@@ -43,10 +60,16 @@ sample.map <- function(lat, lon, lat.range, lon.range, main = NULL, pch = 19, pt
   if(length(col) == length(lon)) col <- col[to.plot]
 
   op <- par(mar = c(3, 5, ifelse(is.null(main), 3, 5), 5) + 0.1, oma = c(1, 1, 1, 1))
-  map("worldHires", fill = TRUE, col = "wheat3", xlim = lon.range, ylim = lat.range)
+    
+  if(pacific.cent) {
+    map("world2Hires", xlim = lon.range, ylim = lat.range)
+  } else {
+    map("worldHires", fill = TRUE, col = "wheat3", xlim = lon.range, ylim = lat.range)
+  }
+  
   points(lon[to.plot], lat[to.plot], pch = pch, cex = pt.cex, col = col, bg = bg)
 
-  lat.lon.axes(lon.range, lat.range, n = n, lon.n = lon.n, lat.n = lat.n)
+  lat.lon.axes(n = n)
   
   if(!is.null(main)) mtext(main, line = 3, cex = 1.5)
   box(lwd = 2)

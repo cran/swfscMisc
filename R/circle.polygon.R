@@ -1,5 +1,3 @@
-#' @export circle.polygon
-#' 
 #' @title Circle Polygon (on Earth)
 #' @description Creates a circular polygon (optionally on the earth) centered at a given point with a constant radius.
 #' 
@@ -54,7 +52,9 @@
 #' mtext("poly.type = 'gc.earth'", line = 3)
 #' 
 #' par(op)
-
+#' 
+#' @export
+#' 
 circle.polygon <- function(x, y, radius, brng.limits = 0, sides = 1, by.length = TRUE,
                            units = "nm", ellipsoid = datum(), dist.method = "lawofcosines", 
                            destination.type = "ellipsoid", poly.type = "cart.earth") {

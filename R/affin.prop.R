@@ -1,5 +1,3 @@
-#' @export affin.prop
-#' 
 #' @title Affinity Propagation
 #' @description Runs the Affinity Propagation clustering algorithm of Frey and Dueck, 2007.
 #' 
@@ -27,7 +25,10 @@
 #' 
 #' iris.affin <- affin.prop(iris.sim, stable.iter = 5)
 #' table(iris$Species, iris.affin[, ncol(iris.affin)])
-
+#' 
+#' @importFrom stats median
+#' @export
+#' 
 affin.prop <- function(sim.mat, num.iter = 100, stable.iter = 10, shared.pref = "min", lambda = 0.5) {
   #
   # Affinity Propagation following :

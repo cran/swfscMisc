@@ -1,5 +1,3 @@
-#' @export sex.symbols
-#' 
 #' @title Sex Symbols
 #' @description Plots male and female symbols on current plot.
 #' 
@@ -16,7 +14,10 @@
 #' y <- runif(20, 0, 200)
 #' plot(x, y, type = "n")
 #' sex.symbols(x, y, sex = 1:2, cex = 1.5, lwd = c(1.5, 4), col = c("blue", "red"))    
-
+#' 
+#' @importFrom graphics par strwidth strheight points arrows segments
+#' @export
+#' 
 sex.symbols <- function(x, y, sex = 1, col = par("fg"), lwd = par("lwd"), cex = 1) {
 	if (length(y) != length(x)) warning("In function sex.symbols, length of y positions does not equal length of x positions")
 	if (length(sex) != length(x)) sex <- rep(sex, length(x))[1:length(x)]

@@ -1,5 +1,3 @@
-#' @export harmonic.mean
-#' 
 #' @title Harmonic Mean
 #' 
 #' @param x a numeric vector.
@@ -11,7 +9,10 @@
 #' mean(x)
 #' median(x)
 #' harmonic.mean(x)
-
+#' 
+#' @importFrom stats na.omit var
+#' @export
+#' 
 harmonic.mean <- function(x) {
   #
   # Calculate harmonic mean of vector x

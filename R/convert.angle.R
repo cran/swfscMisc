@@ -1,5 +1,3 @@
-#' @export convert.angle
-#' 
 #' @title Angle Conversion
 #' @description Converts angles between radians and degrees.
 #' 
@@ -12,7 +10,9 @@
 #' @examples
 #' convert.angle(45, "deg", "rad")
 #' convert.angle(4.5, "r", "d")
-
+#' 
+#' @export
+#' 
 convert.angle <- function(x, from = "degrees", to = "radians") {
   units <- c("degrees", "radians")
   from <- units[pmatch(tolower(from), units)]

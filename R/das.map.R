@@ -1,7 +1,3 @@
-#' @export das.map
-#' @importFrom maps map
-#' @import mapdata
-#'
 #' @title Map DAS
 #' @description Map sightings, effort, and beaufort from DAS file
 #'
@@ -16,7 +12,13 @@
 #'  giving the x (longitude) and y (latitude) coordinates.
 #'
 #' @author Eric Archer \email{eric.archer@@noaa.gov}
-
+#' 
+#' @importFrom grDevices rainbow
+#' @importFrom graphics abline title lines legend points
+#' @importFrom maps map
+#' @import mapdata
+#' @export
+#' 
 das.map <- function(x, main, spp = NULL,
                     spp.col = rainbow(length(spp), end = max(1, length(spp) - 2) / length(spp)),
                     lat.range = NULL, lon.range = NULL, n.ticks = 5,

@@ -1,7 +1,4 @@
-#' @export bearing
-#' 
 #' @title Calculate Bearing Between Two Positions
-#'
 #' @description Calculates the bearing between two points, given each point's latitude and longitude coordinates
 #' 
 #' @param lat1,lon1 numeric. The latitude and longitude of the starting coordinate in decimal degrees.
@@ -14,7 +11,9 @@
 #' @examples 
 #' # What is the bearing from San Diego, CA to Honolulu, HI?
 #' bearing(32.87, -117.25, 21.35, -157.98)
-
+#' 
+#' @export
+#' 
 bearing <- function(lat1, lon1, lat2, lon2) {
   brng.func <- function(lat1, lon1, lat2, lon2) {
     lat1 <- convert.angle(lat1, "degrees", "radians")

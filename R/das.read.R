@@ -1,5 +1,3 @@
-#' @export das.read
-#'
 #' @title Read DAS File
 #' @description Reads a DAS file into a data.frame where each line is data for a specific
 #'   event.
@@ -7,7 +5,9 @@
 #' @param file filename of a DAS file.
 #'
 #' @author Eric Archer \email{eric.archer@@noaa.gov}
-
+#' 
+#' @export
+#' 
 das.read <- function(file) {
   # read data from file as text lines
   DAS <- readLines(file)

@@ -1,7 +1,3 @@
-#' @export sample.map
-#' @importFrom maps map
-#' @import mapdata
-#' 
 #' @title Plot Samples on World Map
 #' @description Plot a set of samples on a world map.
 #' 
@@ -40,7 +36,13 @@
 #' lat.range <- c(10, 75)
 #' lon.range <- c(110, -110)
 #' sample.map(lat, lon, lat.range, lon.range)
-
+#' 
+#' @importFrom stats sd
+#' @importFrom graphics par points mtext box
+#' @importFrom maps map
+#' @import mapdata
+#' @export sample.map
+#' 
 sample.map <- function(lat, lon, lat.range, lon.range, main = NULL, pch = 19, pt.cex = 1, 
                        col = "black", bg = col, n = 5, lon.n = n, lat.n = n) {
   pacific.cent <- lon.range[1] > lon.range[2]

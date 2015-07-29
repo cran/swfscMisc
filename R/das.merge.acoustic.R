@@ -1,5 +1,3 @@
-#' @export das.merge.acoustic
-#'
 #' @title Merge DAS Data Into Acoustic Detections
 #' @description Fill in sighting information for acoustic detections from DAS file.
 #'
@@ -8,7 +6,10 @@
 #' @param out.file desired output .csv filename.
 #'
 #' @author Eric Archer \email{eric.archer@@noaa.gov}
-
+#' 
+#' @importFrom utils read.csv write.csv
+#' @export
+#' 
 das.merge.acoustic <- function(acoust.file, das.file, out.file) {
   das.df <- das.read(das.file)
   sight.df <- das.df[das.df$Event == "S", ]

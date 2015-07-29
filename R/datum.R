@@ -1,5 +1,3 @@
-#' @export datum
-#' 
 #' @title Datum
 #' @description Return parameters specifying ellipsoid datum model.
 #' 
@@ -12,7 +10,9 @@
 #' @return vector of a, b, and f parameters.
 #' 
 #' @author Eric Archer \email{eric.archer@@noaa.gov}
-
+#' 
+#' @export
+#' 
 datum <- function(model = "wgs84") {
   m <- c("wgs84", "grs80", "airy", "international", "clarke", "grs67")
   model <- m[pmatch(tolower(model), m)]

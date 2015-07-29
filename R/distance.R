@@ -1,26 +1,27 @@
-#' @export distance
-#' 
 #' @title Distance Between Coordinates
-#' @description Calculates the distance between two coordinates using the Law of Cosines, Haversine,
-#' or Vincenty methods.
+#' @description Calculates the distance between two coordinates using the Law 
+#'   of Cosines, Haversine, or Vincenty methods.
 #' 
-#' @param lat1,lon1,lat2,lon2 The latitude and longitude of the first and second points in 
-#' decimal degrees.
+#' @param lat1,lon1,lat2,lon2 The latitude and longitude of the first and 
+#'   second points in decimal degrees.
 #' @param radius radius of sphere.
-#' @param units units of distance. Can be "km" (kilometers), "nm" (nautical miles), 
-#' or "mi" (statute miles).
-#' @param ellipsoid ellipsoid model parameters as returned from a call to \code{\link{datum}}.
-#' @param iter.limit An integer value defining the limit of iterations for Vincenty method.
-#' @param method Character defining the distance method to use. Can be "lawofcosines", "haversine",
-#' "vincenty", or any partial match thereof (case insensitive).
+#' @param units units of distance. Can be "km" (kilometers), 
+#'   "nm" (nautical miles), or "mi" (statute miles).
+#' @param ellipsoid ellipsoid model parameters as returned from a 
+#'   call to \code{\link{datum}}.
+#' @param iter.limit An integer value defining the limit of iterations 
+#'   for Vincenty method.
+#' @param method Character defining the distance method to use. Can be 
+#'   "lawofcosines", "haversine", "vincenty", or any partial match 
+#'   thereof (case insensitive).
 #' 
 #' @author Eric Archer \email{eric.archer@@noaa.gov}
 #' 
 #' @references
 #' Code adapted from JavaScript by Chris Veness 
-#' \url{http://www.movable-type.co.uk/scripts/latlong.html}
-#' Vincenty, T. 1975.  Direct and inverse solutions of geodesics on the ellipsoid with 
-#' application of nested equations. Survey Review 22(176):88-93 
+#' \url{http://www.movable-type.co.uk/scripts/latlong.html} \cr
+#' Vincenty, T. 1975.  Direct and inverse solutions of geodesics on the 
+#' ellipsoid with application of nested equations. Survey Review 22(176):88-93 \cr
 #' \url{http://www.ngs.noaa.gov/PUBS_LIB/inverse.pdf}.
 #' 
 #' @examples
@@ -28,10 +29,13 @@
 #' distance(32.87, -117.25, 21.35, -157.98, method = "lawofcosines")
 #' distance(32.87, -117.25, 21.35, -157.98, method = "haversine")
 #' distance(32.87, -117.25, 21.35, -157.98, method = "vincenty")
-
-distance <- function(lat1, lon1, lat2, lon2, radius = convert.distance(6371, "km", "nm"),
-                             units = "nm", ellipsoid = datum(), iter.limit = 20,
-                             method = "lawofcosines") {
+#' 
+#' @export
+#' 
+distance <- function(lat1, lon1, lat2, lon2, 
+                     radius = convert.distance(6371, "km", "nm"),
+                     units = "nm", ellipsoid = datum(), iter.limit = 20,
+                     method = "lawofcosines") {
   
   delta.lat <- convert.angle(lat2 - lat1, "degrees", "radians")
   delta.lon <- convert.angle(lon2 - lon1, "degrees", "radians")
@@ -44,11 +48,14 @@ distance <- function(lat1, lon1, lat2, lon2, radius = convert.distance(6371, "km
   method <- m[pmatch(tolower(method), m)]
   result <- if(method == "lawofcosines") {
     inner.term <- sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(delta.lon)
-    if(inner.term < -1 || inner.term > 1) 0 else acos(inner.term) * radius
+    if(inner.term < -1 || inner.term > 1) 0 else {
+      convert.distance(acos(inner.term) * radius, "nm", units)
+    }
   } else if(method == "haversine") {
-    term.a <- sin(delta.lat / 2) ^ 2 + cos(lat1) * cos(lat2) * sin(delta.lon / 2) ^ 2
+    term.a <- sin(delta.lat / 2) ^ 2 + cos(lat1) * cos(lat2) * 
+      sin(delta.lon / 2) ^ 2
     term.c <- 2 * atan2(sqrt(term.a), sqrt(1 - term.a))
-    radius * term.c
+    convert.distance(radius * term.c, "nm", units)
   } else if(method == "vincenty") {
     u1 <- atan((1 - ellipsoid["f"]) * tan(lat1))
     u2 <- atan((1 - ellipsoid["f"]) * tan(lat2))
@@ -73,7 +80,8 @@ distance <- function(lat1, lon1, lat2, lon2, radius = convert.distance(6371, "km
       cos.sq.alpha <- 1 - sin.alpha ^ 2
       cos.2.sigma.m <- cos.sigma - 2 * sin.u1 * sin.u2 / cos.sq.alpha
       if(is.nan(cos.2.sigma.m)) cos.2.sigma.m <- 0
-      term.c <- ellipsoid["f"] / 16 * cos.sq.alpha * (4 + ellipsoid["f"] * (4 - 3 * cos.sq.alpha))
+      term.c <- ellipsoid["f"] / 16 * cos.sq.alpha * 
+        (4 + ellipsoid["f"] * (4 - 3 * cos.sq.alpha))
       lambda.p <- lambda
       lambda <- delta.lon + (1 - term.c) * ellipsoid["f"] * sin.alpha * 
         (sigma + term.c * sin.sigma * (cos.2.sigma.m + term.c * cos.sigma * 
@@ -82,7 +90,8 @@ distance <- function(lat1, lon1, lat2, lon2, radius = convert.distance(6371, "km
     }
     if(iter > iter.limit) return(NA)
     
-    u.sq <- cos.sq.alpha * (ellipsoid["a"] ^ 2 - ellipsoid["b"] ^ 2) / (ellipsoid["b"] ^ 2)
+    u.sq <- cos.sq.alpha * (ellipsoid["a"] ^ 2 - ellipsoid["b"] ^ 2) / 
+      (ellipsoid["b"] ^ 2)
     term.a <- 1 + u.sq / 16384 * (4096 + u.sq * (-768 + u.sq * (320 - 175 * u.sq)))
     term.b <- u.sq / 1024 * (256 + u.sq * (-128 + u.sq * (74 - 47 * u.sq)))
     delta.sigma <- term.b * sin.sigma * (cos.2.sigma.m + term.b / 4 *

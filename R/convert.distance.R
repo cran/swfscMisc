@@ -1,5 +1,3 @@
-#' @export convert.distance
-#' 
 #' @title Distance Conversion
 #' @description Convert distances between kilometers, nautical miles, and statute miles.
 #' 
@@ -8,7 +6,9 @@
 #' "nm" (nautical miles), or "mi" (statute miles).
 #' 
 #' @author Eric Archer \email{eric.archer@@noaa.gov}
-
+#' 
+#' @export
+#' 
 convert.distance <- function(x, from = "nm", to = "km") {
   x <- switch(from,
     km = x,

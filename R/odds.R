@@ -1,6 +1,4 @@
-#' @rdname odds
-#' @export odds logOdds invOdds invLogOdds
-#' 
+#' @name odds
 #' @title Odds Conversion
 #' @description \tabular{ll}{
 #'   \code{odds} \tab converts probability to odds \cr
@@ -19,5 +17,22 @@
 #' odds.df
 #' invOdds(odds.df$odds)
 #' invLogOdds(odds.df$logOdds)
-
+#' 
+#' @export
+#' 
 odds <- function(x) ifelse(x < 0 | x > 1, as.numeric(NA), x / (1 - x))
+
+#' @rdname odds
+#' @export
+#' 
+logOdds <- function(x) log(odds(x))
+
+#' @rdname odds
+#' @export
+#' 
+invOdds <- function(x) x / (1 + x)
+
+#' @rdname odds
+#' @export
+#' 
+invLogOdds <- function(x) exp(x) / (1 + exp(x))

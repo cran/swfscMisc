@@ -1,5 +1,3 @@
-#' @export braces
-#' 
 #' @title Braces
 #' @description Adds curly braces to a plot.
 #' 
@@ -35,7 +33,10 @@
 #' plot(c(0, 100), c(0, 17), type = "n")
 #' braces(20, 80, 7, 5, 1)
 #' braces(20, 80, 13, 15, 1)
-
+#' 
+#' @importFrom graphics par segments lines
+#' @export
+#' 
 braces <- function(xfrom, xto, yfrom, yto, radius = 1, col = par("fg"), lty = par("lty"), lwd = par("lwd")) {
  n <- max(length(xfrom), length(xto), length(yfrom), length(yto))
  if (length(xfrom) < n) xfrom <- rep(xfrom, n)[1:n]

@@ -1,5 +1,3 @@
-#' @export normalize
-#' 
 #' @title Normalize a Numeric Vector
 #' @description Normalize a numeric vector to have a mean of zero and a standard deviation of one.\
 #' 
@@ -15,7 +13,10 @@
 #' mean(x.norm)
 #' sd(x)
 #' sd(x.norm)
-
+#' 
+#' @importFrom stats sd
+#' @export
+#' 
 normalize <- function(x) {
   if(!is.numeric(x) & !is.vector(x)) stop("'x' must be a numeric vector")
   x.mean <- mean(x, na.rm = TRUE)

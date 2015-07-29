@@ -1,5 +1,3 @@
-#' @export central.quantile
-#' 
 #' @title Central Quantile
 #' @description Upper and lower values of central quantile
 #' 
@@ -14,7 +12,10 @@
 #' x <- runif(1000)
 #' central.quantile(x)
 #' central.quantile(x, pct = 0.75)
-
+#' 
+#' @importFrom stats quantile
+#' @export
+#' 
 central.quantile <- function(x, pct = 0.95) {
   if((pct < 0) | (pct > 100)) return(NA)
   if(pct > 1) pct <- pct / 100

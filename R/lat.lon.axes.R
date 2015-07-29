@@ -1,5 +1,3 @@
-#' @export lat.lon.axes
-#' 
 #' @title Latitude and Longitude axes
 #' @description Add latitude and longitude axes to a map.
 #' 
@@ -7,7 +5,10 @@
 #' or latitude (\code{lat.n}). See \code{\link{pretty}} for more details.
 #' 
 #' @author Eric Archer \email{eric.archer@@noaa.gov}
-
+#' 
+#' @importFrom graphics par axis
+#' @export
+#' 
 lat.lon.axes <- function(n = 5, lon.n = n, lat.n = n) {
   lon.range <- par("usr")[1:2]
   lon <- list(ticks = pretty(lon.range, n = lon.n))

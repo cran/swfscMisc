@@ -1,5 +1,3 @@
-#' @export uniform.test
-#' 
 #' @title Uniform Distribution Test
 #' @description Tests whether a histogram is significantly different from a uniform distribution.
 #' 
@@ -15,7 +13,10 @@
 #' uniform.test(hist(x.unif), B = 1000)
 #' x.lnorm <- rlnorm(100)
 #' uniform.test(hist(x.lnorm), B = 1000)
-
+#' 
+#' @importFrom stats chisq.test
+#' @export
+#' 
 uniform.test <- function(hist.output, B = NULL) {
   break.diff <- diff(hist.output$breaks)
   probs <- break.diff / sum(break.diff)

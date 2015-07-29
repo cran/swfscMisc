@@ -1,5 +1,3 @@
-#' @export copy.tri
-#' 
 #' @title Copy Matrix Triangles
 #' @description Copy between lower left and upper right triangles of a matrix.
 #' 
@@ -14,7 +12,9 @@
 #' x <- matrix(1:9, nrow = 3)
 #' print(x)
 #' copy.tri(x)
-
+#' 
+#' @export
+#' 
 copy.tri <- function(x, from = "lower") {  
   if (!is.matrix(x)) stop("'x' must be a matrix")
   if (nrow(x) != ncol(x)) stop("'x' must be a square matrix")

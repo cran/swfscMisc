@@ -1,5 +1,3 @@
-#' @export geometric.mean
-#' 
 #' @title Geometric Mean
 #' @description Calculates the geometric mean of a vector.
 #' 
@@ -12,7 +10,10 @@
 #' mean(x)
 #' median(x)
 #' geometric.mean(x)
-
+#' 
+#' @importFrom stats na.omit
+#' @export
+#' 
 geometric.mean <- function(x) {
   x <- na.omit(x)
   if(length(x) == 0) return(NA)

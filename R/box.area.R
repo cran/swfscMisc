@@ -1,7 +1,4 @@
-#' @export box.area
-#' 
 #' @title Area of a Box
-#' 
 #' @description Calculate the area of a square on the earth.
 #' 
 #' @param lat,lon The latitude and longitude of the lower right corner of the box in decimal degrees.
@@ -16,7 +13,10 @@
 #' box.area(32.87, -117.25, edge = 1, units = "nm")
 #' box.area(32.87, -117.25, edge = 1, units = "km")
 #' box.area(32.87, -117.25, edge = 1, units = "mi")
-
+#' 
+#' @importFrom stats integrate
+#' @export
+#' 
 box.area <- function(lat, lon, edge, units = "nm") {
   integrate.Vincenty <- Vectorize(function(lat, start.lon, end.lon) {
     distance(lat, start.lon, lat, end.lon, units = units, method = "vincenty")

@@ -1,7 +1,7 @@
 #' @title Between
 #' @description Is a numeric value between two other values?
 #' 
-#' @param x numeric value to check.
+#' @param x vector of numeric values to check.
 #' @param a,b numeric values describing range. 
 #' @param include.ends logical. Should test include \code{a} and \code{b}? Is 
 #'   test > and < or >= and <= ?
@@ -19,9 +19,9 @@
 isBetween <- function(x, a, b = NULL, include.ends = FALSE, na.convert = TRUE) {
   rng <- range(c(a, b))
   result <- if(!include.ends) {
-    x > rng[1] & x < rng[2]
+    sapply(x, function(x.i) x.i > rng[1] & x.i < rng[2])
   } else {
-    x >= rng[1] & x <= rng[2]
+    sapply(x, function(x.i) x.i >= rng[1] & x.i <= rng[2])
   }
-  if(is.na(result) & na.convert) FALSE else result
+  ifelse(is.na(result) & na.convert, FALSE, result)
 }

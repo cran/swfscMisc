@@ -24,6 +24,7 @@ das.map <- function(x, main, spp = NULL,
                     lat.range = NULL, lon.range = NULL, n.ticks = 5,
                     spp.legend.loc = "topleft", effort.legend.loc = "topright") {
   das.df <- if(is.data.frame(x)) x else das.read(x)
+  das.df <- das.df[!is.na(das.df$Lat) & !is.na(das.df$Long), ]
 
   # format coordinates
   if(is.null(lat.range)) lat.range <- range(pretty(das.df$Lat))

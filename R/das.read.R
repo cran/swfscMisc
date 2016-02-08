@@ -10,8 +10,8 @@
 #' 
 das.read <- function(file) {
   # read data from file as text lines
-  DAS <- readLines(file)
-  nDAS <-length(DAS)
+  DAS <- readLines(file, warn = FALSE)
+  nDAS <- length(DAS)
 
   # read event and effort
   Event <- substr(DAS, 4, 4)
@@ -25,10 +25,12 @@ das.read <- function(file) {
   Date <- strptime(paste(dt, tm), "%m%d%y %H%M%S")
 
   # latitude and longitude
-  LatD <- as.numeric(substr(DAS, 21, 22))
-  LatM <- as.numeric(substr(DAS, 24, 28))
-  LongD <- as.numeric(substr(DAS, 31, 33))
-  LongM <- as.numeric(substr(DAS, 35, 39))
+  suppressWarnings({
+    LatD <- as.numeric(substr(DAS, 21, 22))
+    LatM <- as.numeric(substr(DAS, 24, 28))
+    LongD <- as.numeric(substr(DAS, 31, 33))
+    LongM <- as.numeric(substr(DAS, 35, 39))
+  })
   Lat <- (LatD + LatM/60) * ifelse(substr(DAS, 20, 20) == "S", -1, 1)
   Long <- (LongD + LongM/60) * ifelse(substr(DAS, 30, 30) == "W", -1, 1)
 

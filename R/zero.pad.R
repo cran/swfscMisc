@@ -1,4 +1,6 @@
 #' @title Zero Pad Integers
+#' @description Return character representation of integers that are zero-padded 
+#'   to the left so all are the same length.
 #' 
 #' @param x a vector of integers.
 #' 

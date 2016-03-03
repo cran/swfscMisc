@@ -1,43 +1,35 @@
-# swfscMisc 1.0.9
+# swfscMisc
 
-## Additions
 
-* Added 'transparent' function
+## Changes in v 1.1
 
-## Changes
+* Added `autoUnits` function
+* Changed default arguments for `lat.range` and `lon.range` to `NULL` in `sample.map`. If not specified, the ranges will be set to the ranges of the `lat` and `lon`.
 
+
+## Changes in v 1.0.9
+
+* Added `transparent` function
 * Changed distance and destination functions to accept partial matches for method 
 of calculation, type of surface, and units
 
-# swfscMisc 1.0.8
 
-## Bug Fixes
+## Changes in v 1.0.8
 
-* Fixed 'das.read' to handle errors in position and suppress warnings about NAs
+* Fixed `das.read` to handle errors in position and suppress warnings about NAs
 during numerical conversions.
-* Fixed 'das.map' to remove records with no position
+* Fixed `das.map` to remove records with no position
 
 
-# swfscMisc 1.0.7
-
-## Changes
+## Changes in v 1.0.7
 
 * Changed isBetween to accept a vector of numbers
 
-# swfscMisc 1.0.6
 
-## Additions
+# Changes in v 1.0.6
 
 * Added NEWS.md
-* Added 'diversity' function (moved from strataG package)
-* Added 'isBetween' function to test if a number is between two numbers
-
-## Changes
-
-* Updated README.md
-
-## Bug Fixes
-
-* Fixed 'zero.pad' to pad to largest integer.
+* Added `diversity` function (moved from strataG package)
+* Added `isBetween` function to test if a number is between two numbers
 
 

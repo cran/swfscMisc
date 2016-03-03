@@ -23,8 +23,7 @@ or "mi" (statute miles), or any partial match thereof (case sensitive).}
 \item{radius}{numeric. Define the radius for \code{type} = "sphere". In units of \code{units}.}
 
 \item{type}{Character defining type of surface. Can be "sphere", "ellipsoid", "vincenty", or 
-partial match thereof (case-sensitive).
-s}
+partial match thereof (case-sensitive).}
 }
 \value{
 latitude and longitude of destination.

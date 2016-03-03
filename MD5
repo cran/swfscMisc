@@ -1,7 +1,8 @@
-7a33d68124c59e0916ac51c7c69fbfb8 *DESCRIPTION
-b0302c1aa67090cc5680150dccd75c93 *NAMESPACE
-a663c2d4e9c98b9def127da090e00031 *NEWS.md
+da4fd94e73a376a4a4fab1d6f76d34a6 *DESCRIPTION
+81b0d85595db92cb5c135a9a7e713b05 *NAMESPACE
+094b32cfcb8d15eb6f92a2ad5f0add0b *NEWS.md
 c9753c83916394f507993dc5181db50a *R/affin.prop.R
+fe57f307c305509117269cf6a6e4a2a2 *R/autoUnits.R
 11bd38028ba3d7b17907bc05e16b2107 *R/bearing.R
 d294c58d6246150f0aa2e9f31b964f89 *R/box.area.R
 ffc7ec8086142c9bd3c89a676e27d56d *R/braces.R
@@ -17,7 +18,7 @@ b456b14c84eff5550d07f48975e69248 *R/color.name.R
 4294e3fa8f994a4b3985f6fddfd6ede9 *R/das.read.R
 55903b9f03a28351b3b251338a1c95fc *R/das.spp.freq.R
 a421085487faa8d7b2403f4c20fbe608 *R/datum.R
-2d421ffcbb7df6bb3fbbbaa51d0ec63c *R/destination.R
+749e840c384c797702c748106b13dd6e *R/destination.R
 a6dbf5d6f91b7a7fe93213602915553c *R/distance.R
 6c97686f81eba5c19f17d2e7c082e2c3 *R/diversity.R
 fb0e212182390c92ed24a8fd2779ce98 *R/fisher.method.p.R
@@ -32,7 +33,7 @@ b6b81d93f7008b5507bfc471dfffefc0 *R/isBetween.R
 9b2e477414a066b67716b66d9f29e4ed *R/one.arg.R
 d7526f0a25dc7f39140cbeadfc27223d *R/pVal.R
 2d57b618c6dceb906fcd067ae0f35c14 *R/row.col.page.fit.r
-1a4ed6a2a94d23ddc9d4a672fd402871 *R/sample.map.R
+9abc5ac9eb4f54f03d3be6b207b370b8 *R/sample.map.R
 2f1aa6fba26f9adba7fd31b366472549 *R/scatterdens.R
 e69e1ae73e338125cf35376bd5cc3040 *R/sex.symbols.R
 4177fa9f7d4ec1472c32e5ca0b72428c *R/transparent.R
@@ -40,6 +41,7 @@ e69e1ae73e338125cf35376bd5cc3040 *R/sex.symbols.R
 b7b273ed4dc20658153129120adb1c41 *R/which.nearest.R
 631047f0687086f7c27b5dfd20830394 *R/zero.pad.R
 aabef3260373b62d3b9e73e4a093c1a8 *man/affin.prop.Rd
+96434830a40e99c93cce3cd7b1414dc4 *man/autoUnits.Rd
 08308ebfeeb871e6139238a900b7a657 *man/bearing.Rd
 395de61184102673ced62fea4e140823 *man/box.area.Rd
 fd3860a348965caa8cf8eb498a9848ab *man/braces.Rd
@@ -55,7 +57,7 @@ d76ab9804487bf2a83e13fc226134882 *man/crossing.point.Rd
 627d01848dd69da8eb962d5e0931f1f1 *man/das.read.Rd
 526f2c8711b63cdfddbd433c8e18c859 *man/das.spp.freq.Rd
 be77ea8a150e3deb3520390f56e6a76b *man/datum.Rd
-0a5985de0d6033162c13a84fb98b26ae *man/destination.Rd
+25a632d25df2c033bda63ad622babe15 *man/destination.Rd
 6a6315a3bf67231df722a3183f8da677 *man/distance.Rd
 269d41d576ff81721a41a040b856e71a *man/diversity.Rd
 21f4e63521856b4fbf28e40ae6d3217e *man/fisher.method.p.Rd
@@ -70,7 +72,7 @@ fa7550bf70a3116c3204d973d977b8ca *man/normalize.Rd
 641e771445df9f2feb13106b00d96d90 *man/one.arg.Rd
 ff466dc587a6ad4d0d6719f9e7ae5480 *man/pVal.Rd
 475f8496d7a14872109de601539aad83 *man/row.col.page.fit.Rd
-b5d942e0c67b926286d561e6ab144348 *man/sample.map.Rd
+313bbe3f5023f17f450824e28dd31737 *man/sample.map.Rd
 862d0d50113f80ad34708806ed3dac71 *man/scatterdens.Rd
 0361f4fd0febcf23d6320751f46a6dbd *man/sex.symbols.Rd
 153482c6ac8a12091073e79f3d816737 *man/transparent.Rd

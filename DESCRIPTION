@@ -5,15 +5,15 @@ Description: Collection of conversion, analytical, geodesic, mapping, and
     plotting functions. Used to support packages and code written by
     researchers at the Southwest Fisheries Science Center of the National
     Oceanic and Atmospheric Administration.
-Version: 1.0.9
-Date: 2016-02-07
+Version: 1.1
+Date: 2016-03-03
 Author: Eric Archer
 Maintainer: Eric Archer <eric.archer@noaa.gov>
-Depends: R (>= 3.2.0), mapdata
+Depends: R (>= 3.2.3), mapdata
 Imports: graphics, grDevices, maps, spatstat, stats, utils
 License: GPL (>= 2)
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2016-02-08 07:48:31 UTC; eric.archer
+Packaged: 2016-03-03 20:23:48 UTC; eric.archer
 Repository: CRAN
-Date/Publication: 2016-02-08 13:38:03
+Date/Publication: 2016-03-03 23:49:05

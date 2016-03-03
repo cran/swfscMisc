@@ -3,7 +3,7 @@
 #' 
 #' @param lon,lat vectors giving the longitude and latitude of points to plot.
 #' @param lon.range,lat.range vectors giving the minimum and maximum longitude 
-#'   and latitude of the map. If the irst value in \code{lon.range} is greater 
+#'   and latitude of the map. If the first value in \code{lon.range} is greater 
 #'   than the second value, then a Pacific-centric map (\code{\link[mapdata]{world2Hires}}) 
 #'   is used and continents will not be filled in.
 #' @param main main title for the plot.
@@ -43,8 +43,11 @@
 #' @import mapdata
 #' @export sample.map
 #' 
-sample.map <- function(lat, lon, lat.range, lon.range, main = NULL, pch = 19, pt.cex = 1, 
-                       col = "black", bg = col, n = 5, lon.n = n, lat.n = n) {
+sample.map <- function(lat, lon, lat.range = NULL, lon.range = NULL, main = NULL, 
+                       pch = 19, pt.cex = 1, col = "black", bg = col, n = 5, 
+                       lon.n = n, lat.n = n) {
+  if(is.null(lon.range)) lon.range <- range(lon)
+  if(is.null(lat.range)) lat.range <- range(lat)
   pacific.cent <- lon.range[1] > lon.range[2]
   if(pacific.cent) {
     lon <- ifelse(lon < 0, 360 + lon, lon)

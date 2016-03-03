@@ -10,7 +10,7 @@
 #' @param radius numeric. Define the radius for \code{type} = "sphere". In units of \code{units}.
 #' @param type Character defining type of surface. Can be "sphere", "ellipsoid", "vincenty", or 
 #' partial match thereof (case-sensitive).
-#' s
+#' 
 #' @return latitude and longitude of destination.
 #' 
 #' @author Eric Archer \email{eric.archer@@noaa.gov}

@@ -23,4 +23,3 @@ na.count(x.df)
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

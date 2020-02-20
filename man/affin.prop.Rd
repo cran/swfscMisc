@@ -4,8 +4,13 @@
 \alias{affin.prop}
 \title{Affinity Propagation}
 \usage{
-affin.prop(sim.mat, num.iter = 100, stable.iter = 10, shared.pref = "min",
-  lambda = 0.5)
+affin.prop(
+  sim.mat,
+  num.iter = 100,
+  stable.iter = 10,
+  shared.pref = "min",
+  lambda = 0.5
+)
 }
 \arguments{
 \item{sim.mat}{a similarity matrix between individuals to be clustered.}
@@ -38,10 +43,9 @@ iris.affin <- affin.prop(iris.sim, stable.iter = 5)
 table(iris$Species, iris.affin[, ncol(iris.affin)])
 
 }
-\author{
-Eric Archer \email{eric.archer@noaa.gov}
-}
 \references{
 Frey, B.J., and D. Dueck. 2007. Clustering by passing messages between data points. Science 315:972-976
 }
-
+\author{
+Eric Archer \email{eric.archer@noaa.gov}
+}

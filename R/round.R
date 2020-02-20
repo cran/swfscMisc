@@ -22,7 +22,7 @@
 #' signif(mtcars, 2)
 #'
 #' @name round
-#' @aliases ceiling floor trunc round siginif
+#' @aliases ceiling floor trunc round signif
 #' 
 NULL
 

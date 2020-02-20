@@ -19,4 +19,3 @@ Convert distances between kilometers, nautical miles, and statute miles.
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

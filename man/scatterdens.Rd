@@ -30,10 +30,9 @@ scatterdens(x, y, xlab = "x", ylab = "y")
 par(op)
 
 }
-\author{
-Eric Archer \email{eric.archer@noaa.gov}
-}
 \references{
 Original code by Ken Kleiman: \url{http://sas-and-r.blogspot.co.uk/2011/06/example-841-scatterplot-with-marginal.html}
 }
-
+\author{
+Eric Archer \email{eric.archer@noaa.gov}
+}

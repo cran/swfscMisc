@@ -28,4 +28,3 @@ sex.symbols(x, y, sex = 1:2, cex = 1.5, lwd = c(1.5, 4), col = c("blue", "red"))
 \author{
 Tim Gerrodette \email{tim.gerrodette@noaa.gov}
 }
-

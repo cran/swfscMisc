@@ -22,4 +22,3 @@ autoUnits(ISOdate(2000, 5, 1) - ISOdate(2000, 4, 20))
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

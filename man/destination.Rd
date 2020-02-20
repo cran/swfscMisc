@@ -4,9 +4,16 @@
 \alias{destination}
 \title{Destination on Sphere or Ellipsoid}
 \usage{
-destination(lat, lon, brng, distance, units = c("nm", "km", "mi"),
-  ellipsoid = datum(), radius = convert.distance(6371, "km", "nm"),
-  type = c("ellipsoid", "sphere", "vincenty"))
+destination(
+  lat,
+  lon,
+  brng,
+  distance,
+  units = c("nm", "km", "mi"),
+  ellipsoid = datum(),
+  radius = convert.distance(6371, "km", "nm"),
+  type = c("ellipsoid", "sphere", "vincenty")
+)
 }
 \arguments{
 \item{lat, lon}{numeric. The latitude and longitude of the coordinate in decimal degrees.}
@@ -37,9 +44,6 @@ destination(32.87, -117.25, 262, 4174, units = "km", type = "ellipsoid")
 destination(32.87, -117.25, 262, 4174, units = "km", type = "vincenty")
 
 }
-\author{
-Eric Archer \email{eric.archer@noaa.gov}
-}
 \references{
 Ellipsoid code adapted from JavaScript by Larry Bogan 
 \url{http://adsabs.harvard.edu/full/2000JRASC..94...48B}.\cr
@@ -49,4 +53,6 @@ Vincenty, T. 1975.  Direct and inverse solutions of geodesics on the ellipsoid w
 application of nested equations. Survey Review 22(176):88-93 
 \url{http://www.ngs.noaa.gov/PUBS_LIB/inverse.pdf}.
 }
-
+\author{
+Eric Archer \email{eric.archer@noaa.gov}
+}

@@ -25,4 +25,3 @@ bearing(32.87, -117.25, 21.35, -157.98)
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

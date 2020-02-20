@@ -29,4 +29,3 @@ row.col.page.fit(9, width = 10, height = 10)
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

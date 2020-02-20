@@ -7,7 +7,6 @@
 #' 
 #' @author Eric Archer \email{eric.archer@@noaa.gov}
 #' 
-#' @importFrom grDevices colors
 #' @export
 #' 
-color.name <- function(i) colors()[i]
+color.name <- function(i) grDevices::colors()[i]

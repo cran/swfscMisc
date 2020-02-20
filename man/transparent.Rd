@@ -24,4 +24,3 @@ plot(pct, pct, bg = transparent("red", pct), pch = 21, cex = 4, xlab = "X", ylab
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

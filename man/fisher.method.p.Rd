@@ -16,4 +16,3 @@ Calculate Fisher's method p-value to summarize a vector of
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

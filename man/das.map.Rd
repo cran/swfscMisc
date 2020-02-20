@@ -4,9 +4,17 @@
 \alias{das.map}
 \title{Map DAS}
 \usage{
-das.map(x, main, spp = NULL, spp.col = rainbow(length(spp), end = max(1,
-  length(spp) - 2)/length(spp)), lat.range = NULL, lon.range = NULL,
-  n.ticks = 5, spp.legend.loc = "topleft", effort.legend.loc = "topright")
+das.map(
+  x,
+  main,
+  spp = NULL,
+  spp.col = rainbow(length(spp), end = max(1, length(spp) - 2)/length(spp)),
+  lat.range = NULL,
+  lon.range = NULL,
+  n.ticks = 5,
+  spp.legend.loc = "topleft",
+  effort.legend.loc = "topright"
+)
 }
 \arguments{
 \item{x}{filename of a DAS file or a \code{data.frame} from \code{\link{das.read}}.}
@@ -31,4 +39,3 @@ Map sightings, effort, and beaufort from DAS file
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

@@ -16,4 +16,3 @@ Reads a DAS file into a data.frame where each line is data for a specific
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

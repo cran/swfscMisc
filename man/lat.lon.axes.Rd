@@ -16,4 +16,3 @@ Add latitude and longitude axes to a map.
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

@@ -23,4 +23,3 @@ Model parameters are based on distances in km.
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

@@ -10,6 +10,9 @@
 #'   numbers of cases. If not specified, a bar chart will be used if all 
 #'   classes have <= 30 cases.
 #' @param ylab label for y-axis
+#' @param freq.sep.line put frequency of original group on second line in facet 
+#'   label? If \code{FALSE}, labels are single line. If \code{NULL} frequencies 
+#'   will not be included in labels.
 #' @param plot display the plot?
 #'   
 #' @return the \code{ggplot} object is invisibly returned.
@@ -35,45 +38,63 @@
 #' 
 #' plotAssignments(probs, orig)
 #' 
-#' @importFrom reshape2 melt
-#' @importFrom ggplot2 ggplot aes_string geom_area geom_bar scale_fill_discrete 
-#' @importFrom ggplot2 ylab guide_legend facet_wrap labs theme element_text element_blank
 #' @export
 #'
-plotAssignments <- function(probs, orig, type = NULL, ylab = NULL, plot = TRUE) {
-  if(is.null(colnames(probs))) colnames(probs) <- paste("Group", 1:ncol(probs), sep = ".")
-  df <- data.frame(orig = orig, probs)
-  i <- do.call(order, c(as.list(df), list(decreasing = TRUE)))
-  df <- df[i, ]
-  df$id <- 1:nrow(df)
-  freq <- table(df$orig)
-  df <- melt(df, id.vars = c("id", "orig"), variable.name = "pred", value.name = "prob")
-  levels(df$orig) <- paste(names(freq), " (n = ", freq, ")", sep = "")
-  
+plotAssignments <- function(
+  probs, orig, type = NULL, ylab = NULL, freq.sep.line = TRUE, plot = TRUE
+) {
+  freq <- table(orig)
   type <- if(is.null(type)) {
     if(all(freq <= 30)) "bar" else "area"
   } else {
     match.arg(type, c("bar", "area"))
   }
   
+  if(is.null(colnames(probs))) {
+    colnames(probs) <- paste("Group", 1:ncol(probs), sep = ".")
+  }
+  
+  df <- data.frame(orig = orig, probs)
+  i <- do.call(order, c(as.list(df), list(decreasing = TRUE)))
+  df <- df[i, ] %>% 
+    dplyr::mutate(id = 1:dplyr::n()) %>% 
+    tidyr::gather("pred", "prob", -.data$id, -.data$orig)
+  if(!is.null(freq.sep.line)) {
+    levels(df$orig) <- paste0(
+      names(freq), ifelse(freq.sep.line, "\n", " "), "(n = ", freq, ")"
+    )
+  }
+  
   if(is.null(ylab)) ylab <- "Assignment Probability"
   
-  p <- ggplot(df, aes_string("id", "prob")) +
+  p <- ggplot2::ggplot(df, ggplot2::aes_string("id", "prob")) +
     switch(
       type,
-      area = geom_area(aes_string(fill = "pred"), stat = "identity"),
-      bar = geom_bar(aes_string(fill = "pred"), stat = "identity")
+      area = ggplot2::geom_area(
+        ggplot2::aes_string(fill = "pred"), 
+        stat = "identity"
+      ),
+      bar = ggplot2::geom_bar(
+        ggplot2::aes_string(fill = "pred"), 
+        stat = "identity"
+      )
     ) +
-    scale_fill_discrete(guide = guide_legend(title = "Predicted")) +
-    # facet_wrap(~ orig, scales = "free_x") +
-    ylab(ylab) +
-    theme(
+    ggplot2::scale_fill_discrete(
+      guide = ggplot2::guide_legend(title = "Predicted")
+    ) +
+    ggplot2::scale_x_continuous(expand = c(0, 0)) +
+    ggplot2::scale_y_continuous(expand = c(0, 0)) +
+    ggplot2::facet_wrap(~ orig, scales = "free_x") +
+    ggplot2::ylab("Votes") +
+    ggplot2::theme(
       legend.position = "top",
-      text = element_text(size = 14),
-      axis.text.x = element_blank(),
-      axis.title.x = element_blank(),
-      axis.ticks.x = element_blank(),
-      plot.title = element_text(hjust = 0)
+      text = ggplot2::element_text(size = 14),
+      axis.text.x = ggplot2::element_blank(),
+      axis.title.x = ggplot2::element_blank(),
+      axis.ticks.x = ggplot2::element_blank(),
+      plot.title = ggplot2::element_text(hjust = 0),
+      panel.grid = ggplot2::element_blank(),
+      panel.background = ggplot2::element_blank()
     )
   if(plot) print(p)
   invisible(p)

@@ -19,4 +19,3 @@ Fill in sighting information for acoustic detections from DAS file.
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

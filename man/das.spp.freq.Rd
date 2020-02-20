@@ -15,4 +15,3 @@ Returns number of sightings of each species code in a DAS file.
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

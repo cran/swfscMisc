@@ -18,4 +18,3 @@ Return the name of a color listed given the number.
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

@@ -27,4 +27,3 @@ uniform.test(hist(x.lnorm), B = 1000)
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

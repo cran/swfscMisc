@@ -4,9 +4,19 @@
 \alias{circle.polygon}
 \title{Circle Polygon (on Earth)}
 \usage{
-circle.polygon(x, y, radius, brng.limits = 0, sides = 1, by.length = TRUE,
-  units = "nm", ellipsoid = datum(), dist.method = "lawofcosines",
-  destination.type = "ellipsoid", poly.type = "cart.earth")
+circle.polygon(
+  x,
+  y,
+  radius,
+  brng.limits = 0,
+  sides = 1,
+  by.length = TRUE,
+  units = "nm",
+  ellipsoid = datum(),
+  dist.method = "lawofcosines",
+  destination.type = "ellipsoid",
+  poly.type = "cart.earth"
+)
 }
 \arguments{
 \item{x, y}{number specifying the coordinates of the center of the circle in decimal degrees. 
@@ -55,7 +65,7 @@ lon.range <- c(-118.5, -116)
 
 op <- par(mar = c(3, 5, 5, 5) + 0.1, oma = c(1, 1, 1, 1))
 
-map("worldHires", fill = TRUE, col = "wheat3", xlim = lon.range, ylim = lat.range)
+maps::map("mapdata::worldHires", fill = TRUE, col = "wheat3", xlim = lon.range, ylim = lat.range)
 points(-117.24, 32.86, pch = 19, col = "red")
 polygon(cart.earth, border = "red", lwd = 3)
 lat.lon.axes(n = 3)
@@ -68,4 +78,3 @@ par(op)
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

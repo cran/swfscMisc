@@ -12,7 +12,11 @@ diversity(x)
 \description{
 Calculate unbiased estimate of diversity for a vector of items
 }
+\examples{
+x <- sample(1:5, 100, replace = TRUE)
+diversity(x)
+
+}
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

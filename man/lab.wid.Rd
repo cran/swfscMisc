@@ -12,4 +12,3 @@ lab.wid(labels)
 \description{
 Calculate width of labels for plots.
 }
-

@@ -86,10 +86,16 @@ devtools::install_github('ericarcher/swfscMisc')
     * pVal
     * ceiling, floor, trunc, round (.data.frame)
     * uniform.test
+    * setupClusters
     * which.nearest
     * zero.pad
 
-## version 1.2 (current on GitHub)
+## version 1.3 (devel)
+
+* fixed plotAssignments to use facets and removed grids and space around panels
+* added setupClusters
+
+## version 1.2 (on CRAN)
 
 * Added rounding functions for data.frames.
 * Removed NEWS.md - changelog moved to README.md

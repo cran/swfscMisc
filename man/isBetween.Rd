@@ -28,4 +28,3 @@ Order of \code{a} and \code{b} does not matter. If \code{b} is
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

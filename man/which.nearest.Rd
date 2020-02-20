@@ -30,4 +30,3 @@ x[i]
 \author{
 Tim Gerrodette \email{tim.gerrodette@noaa.gov}
 }
-

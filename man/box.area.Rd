@@ -27,4 +27,3 @@ box.area(32.87, -117.25, edge = 1, units = "mi")
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

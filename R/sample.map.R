@@ -37,15 +37,11 @@
 #' lon.range <- c(110, -110)
 #' sample.map(lat, lon, lat.range, lon.range)
 #' 
-#' @importFrom stats sd
-#' @importFrom graphics par points mtext box
-#' @importFrom maps map
-#' @import mapdata
-#' @export sample.map
+#' @export 
 #' 
-sample.map <- function(lat, lon, lat.range = NULL, lon.range = NULL, main = NULL, 
-                       pch = 19, pt.cex = 1, col = "black", bg = col, n = 5, 
-                       lon.n = n, lat.n = n) {
+sample.map <- function(lat, lon, lat.range = NULL, lon.range = NULL, 
+                       main = NULL, pch = 19, pt.cex = 1, col = "black", 
+                       bg = col, n = 5, lon.n = n, lat.n = n) {
   if(is.null(lon.range)) lon.range <- range(lon, na.rm = TRUE)
   if(is.null(lat.range)) lat.range <- range(lat, na.rm = TRUE)
   pacific.cent <- lon.range[1] > lon.range[2]
@@ -65,20 +61,36 @@ sample.map <- function(lat, lon, lat.range = NULL, lon.range = NULL, main = NULL
   if(length(col) == length(lon)) col <- col[to.plot]
   if(length(bg) == length(lon)) bg <- bg[to.plot]
 
-  op <- par(mar = c(3, 5, ifelse(is.null(main), 3, 5), 5) + 0.1, oma = c(1, 1, 1, 1))
+  op <- graphics::par(
+    mar = c(3, 5, ifelse(is.null(main), 3, 5), 5) + 0.1, 
+    oma = c(1, 1, 1, 1)
+  )
     
   if(pacific.cent) {
-    map("world2Hires", xlim = lon.range, ylim = lat.range)
+    maps::map("mapdata::world2Hires", xlim = lon.range, ylim = lat.range)
   } else {
-    map("worldHires", fill = TRUE, col = "wheat3", xlim = lon.range, ylim = lat.range)
+    maps::map(
+      "mapdata::worldHires", 
+      fill = TRUE, 
+      col = "wheat3", 
+      xlim = lon.range, 
+      ylim = lat.range
+    )
   }
   
-  points(lon[to.plot], lat[to.plot], pch = pch, cex = pt.cex, col = col, bg = bg)
+  graphics::points(
+    lon[to.plot], 
+    lat[to.plot], 
+    pch = pch, 
+    cex = pt.cex, 
+    col = col, 
+    bg = bg
+  )
 
   lat.lon.axes(n = n)
   
-  if(!is.null(main)) mtext(main, line = 3, cex = 1.5)
-  box(lwd = 2)
+  if(!is.null(main)) graphics::mtext(main, line = 3, cex = 1.5)
+  graphics::box(lwd = 2)
   
   invisible(op)
 }

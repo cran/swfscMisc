@@ -4,9 +4,17 @@
 \alias{distance}
 \title{Distance Between Coordinates}
 \usage{
-distance(lat1, lon1, lat2, lon2, radius = convert.distance(6371, "km", "nm"),
-  units = c("nm", "km", "mi"), ellipsoid = datum(), iter.limit = 20,
-  method = c("lawofcosines", "haversine", "vincenty"))
+distance(
+  lat1,
+  lon1,
+  lat2,
+  lon2,
+  radius = convert.distance(6371, "km", "nm"),
+  units = c("nm", "km", "mi"),
+  ellipsoid = datum(),
+  iter.limit = 20,
+  method = c("lawofcosines", "haversine", "vincenty")
+)
 }
 \arguments{
 \item{lat1, lon1, lat2, lon2}{The latitude and longitude of the first and 
@@ -39,9 +47,6 @@ distance(32.87, -117.25, 21.35, -157.98, method = "haversine")
 distance(32.87, -117.25, 21.35, -157.98, method = "vincenty")
 
 }
-\author{
-Eric Archer \email{eric.archer@noaa.gov}
-}
 \references{
 Code adapted from JavaScript by Chris Veness 
 \url{http://www.movable-type.co.uk/scripts/latlong.html} \cr
@@ -49,4 +54,6 @@ Vincenty, T. 1975.  Direct and inverse solutions of geodesics on the
 ellipsoid with application of nested equations. Survey Review 22(176):88-93 \cr
 \url{http://www.ngs.noaa.gov/PUBS_LIB/inverse.pdf}.
 }
-
+\author{
+Eric Archer \email{eric.archer@noaa.gov}
+}

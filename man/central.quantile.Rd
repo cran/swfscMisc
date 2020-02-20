@@ -26,4 +26,3 @@ central.quantile(x, pct = 0.75)
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

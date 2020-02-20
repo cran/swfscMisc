@@ -27,4 +27,3 @@ pVal(obs, null.dist)
 \author{
 Eric Archer \email{eric.archer@noaa.gov}
 }
-

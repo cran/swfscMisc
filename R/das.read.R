@@ -9,6 +9,10 @@
 #' @export
 #' 
 das.read <- function(file) {
+  warning(
+    "This function is deprecated and will be removed in later versions. ",
+    "See https://github.com/smwoodman/swfscDAS for replacement functionality."
+  )
   # read data from file as text lines
   DAS <- readLines(file, warn = FALSE)
   nDAS <- length(DAS)

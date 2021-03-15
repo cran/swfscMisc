@@ -54,7 +54,7 @@ plotAssignments <- function(
     colnames(probs) <- paste("Group", 1:ncol(probs), sep = ".")
   }
   
-  df <- data.frame(orig = orig, probs)
+  df <- data.frame(orig = orig, probs, check.names = FALSE)
   i <- do.call(order, c(as.list(df), list(decreasing = TRUE)))
   df <- df[i, ] %>% 
     dplyr::mutate(id = 1:dplyr::n()) %>% 

@@ -23,6 +23,10 @@ das.map <- function(x, main, spp = NULL,
                     spp.col = rainbow(length(spp), end = max(1, length(spp) - 2) / length(spp)),
                     lat.range = NULL, lon.range = NULL, n.ticks = 5,
                     spp.legend.loc = "topleft", effort.legend.loc = "topright") {
+  warning(
+    "This function is deprecated and will be removed in later versions. ",
+    "See https://github.com/smwoodman/CruzPlot for replacement functionality."
+  )
   das.df <- if(is.data.frame(x)) x else das.read(x)
   das.df <- das.df[!is.na(das.df$Lat) & !is.na(das.df$Long), ]
 

@@ -31,7 +31,8 @@ par(op)
 
 }
 \references{
-Original code by Ken Kleiman: \url{http://sas-and-r.blogspot.co.uk/2011/06/example-841-scatterplot-with-marginal.html}
+Original code by 
+\href{https://sas-and-r.blogspot.co.uk/2011/06/example-841-scatterplot-with-marginal.html}{Ken Kleiman}
 }
 \author{
 Eric Archer \email{eric.archer@noaa.gov}

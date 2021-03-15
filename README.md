@@ -60,6 +60,7 @@ devtools::install_github('ericarcher/swfscMisc')
   
 * Plotting functions:
     * braces
+    * catSpatInterp Categorical Spatial Interpolation
     * color.name
     * lab.wid
     * row.col.page.fit
@@ -90,12 +91,20 @@ devtools::install_github('ericarcher/swfscMisc')
     * which.nearest
     * zero.pad
 
-## version 1.3 (devel)
+## version 1.4 (devel)
+
+* added catSpatInterp for Categorical Spatial Interpolation (based on code by Timo Grossenbacher)
+* begin deprecation of das.* functions. to be removed in v1.5.
+* change `destination()` to accept vectors and return a matrix.
+* fixed `plotAssignments()` to not change class names.
+* updated spatstat import
+
+## version 1.3 (on CRAN)
 
 * fixed plotAssignments to use facets and removed grids and space around panels
 * added setupClusters
 
-## version 1.2 (on CRAN)
+## version 1.2
 
 * Added rounding functions for data.frames.
 * Removed NEWS.md - changelog moved to README.md

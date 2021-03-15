@@ -17,7 +17,6 @@
 #' cr.pt <- crossing.point(line1, line2)
 #' print(cr.pt)
 #' 
-#' @importFrom spatstat crossing.psp as.owin as.data.frame.ppp psp
 #' @export
 #' 
 crossing.point <- function(l1, l2) {
@@ -27,9 +26,15 @@ crossing.point <- function(l1, l2) {
   i2.2 <- 2:nrow(l2)
   xlim <- range(c(l1[, 1], l2[, 1]))
   ylim <- range(c(l1[, 2], l2[, 2]))
-  w <- as.owin(list(xrange = xlim, yrange = ylim))
-  psp1 <- psp(l1[i1.1, 1], l1[i1.1, 2], l1[i1.2, 1], l1[i1.2, 2], window = w)
-  psp2 <- psp(l2[i2.1, 1], l2[i2.1, 2], l2[i2.2, 1], l2[i2.2, 2], window = w)
-  cross <- crossing.psp(psp1, psp2, fatal = FALSE)
-  if(is.null(cross)) return(NULL) else as.data.frame(cross)
+  w <- spatstat.geom::as.owin(list(xrange = xlim, yrange = ylim))
+  psp1 <- spatstat.geom::psp(
+    l1[i1.1, 1], l1[i1.1, 2], l1[i1.2, 1], l1[i1.2, 2], 
+    window = w
+  )
+  psp2 <- spatstat.geom::psp(
+    l2[i2.1, 1], l2[i2.1, 2], l2[i2.2, 1], l2[i2.2, 2], 
+    window = w
+  )
+  cross <- spatstat.geom::crossing.psp(psp1, psp2, fatal = FALSE)
+  if(is.null(cross)) return(NULL) else spatstat.geom::as.data.frame.ppp(cross)
 }

@@ -48,11 +48,11 @@ distance(32.87, -117.25, 21.35, -157.98, method = "vincenty")
 
 }
 \references{
-Code adapted from JavaScript by Chris Veness 
-\url{http://www.movable-type.co.uk/scripts/latlong.html} \cr
+Code adapted from JavaScript by 
+\href{https://www.movable-type.co.uk/scripts/latlong.html}{Chris Veness} \cr
 Vincenty, T. 1975.  Direct and inverse solutions of geodesics on the 
-ellipsoid with application of nested equations. Survey Review 22(176):88-93 \cr
-\url{http://www.ngs.noaa.gov/PUBS_LIB/inverse.pdf}.
+ellipsoid with application of nested equations. 
+\href{https://www.ngs.noaa.gov/PUBS_LIB/inverse.pdf}{Survey Review 22(176):88-93}.
 }
 \author{
 Eric Archer \email{eric.archer@noaa.gov}

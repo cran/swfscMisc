@@ -5,7 +5,7 @@ Description: Collection of conversion, analytical, geodesic, mapping, and
     plotting functions. Used to support packages and code written by
     researchers at the Southwest Fisheries Science Center of the National
     Oceanic and Atmospheric Administration.
-Version: 1.4.3
+Version: 1.5
 Authors@R: c(
   EA = person("Eric", "Archer", email = "eric.archer@noaa.gov", role = c("aut", "cre")))
 URL: https://github.com/EricArcher/swfscMisc
@@ -17,8 +17,8 @@ Imports: graphics, grDevices, dplyr, ggplot2, ggrepel, kknn, mapdata,
 License: GPL (>= 2)
 RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2021-03-15 12:40:35 UTC; ericarcher
+Packaged: 2021-05-21 15:51:02 UTC; ericarcher
 Author: Eric Archer [aut, cre]
 Maintainer: Eric Archer <eric.archer@noaa.gov>
 Repository: CRAN
-Date/Publication: 2021-03-15 14:00:02 UTC
+Date/Publication: 2021-05-21 22:50:02 UTC

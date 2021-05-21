@@ -1,5 +1,5 @@
-8fcfbfe5878ab5d317f22a02720059b8 *DESCRIPTION
-e91b230f702b83c5152d57ee27f31c70 *NAMESPACE
+53331895f164275f912c23e2544a78ff *DESCRIPTION
+34a8de9d98f1c0534c4fe281eaf03cea *NAMESPACE
 c9753c83916394f507993dc5181db50a *R/affin.prop.R
 fe57f307c305509117269cf6a6e4a2a2 *R/autoUnits.R
 11bd38028ba3d7b17907bc05e16b2107 *R/bearing.R
@@ -13,10 +13,6 @@ ba7480376f67fa6c35beacc370d2cc2c *R/color.name.R
 0d02a4f83ab0006a29937bf484c01572 *R/convert.distance.R
 688bda7fae4677e1ed22f30bf7278a78 *R/copy.tri.R
 e2487c8ba9ce72ee11f5b2ebb057ccd5 *R/crossing.point.R
-fbd05e6a44d13effdb56fae14d683da9 *R/das.map.R
-5a3d5755ab8c026f96104d91e6dacced *R/das.merge.acoustic.R
-a9f3405826b066aea0693f9b81d343ce *R/das.read.R
-a2c97c98a9537c4e22d595d64f8ac92b *R/das.spp.freq.R
 a421085487faa8d7b2403f4c20fbe608 *R/datum.R
 f3a67ee791d21b3c932c052ad8d492b5 *R/destination.R
 0dd8eb7047f5c3ac9b74399b6f155b15 *R/distance.R
@@ -24,7 +20,7 @@ f3a67ee791d21b3c932c052ad8d492b5 *R/destination.R
 fb0e212182390c92ed24a8fd2779ce98 *R/fisher.method.p.R
 2cdd457e4ec071901bb5e3fca7bcf609 *R/geometric.mean.R
 b6d9dd7bbf8a8016fb0c7f26082a037b *R/ggBiplot.R
-66d6204d1ab479831a95403a2f3c7848 *R/harmonic.mean.R
+a2fa3b7d16b45493e37c4564d7bd2b39 *R/harmonic.mean.R
 b6b81d93f7008b5507bfc471dfffefc0 *R/isBetween.R
 3dcdb02fedacf9a904018abb3119d333 *R/lab.wid.R
 1e0884586776b2c8b973be255329013d *R/lat.lon.axes.R
@@ -35,17 +31,17 @@ fea4b172a9cb1a08d03171a3979cc70f *R/month2Season.R
 d7526f0a25dc7f39140cbeadfc27223d *R/pVal.R
 e0198d00d0cf2a4bcfc6fc55dce7ca59 *R/plotAssignments.R
 341076b1b8ce1725cd5774fa19392dda *R/round.R
-2d57b618c6dceb906fcd067ae0f35c14 *R/row.col.page.fit.r
+2d57b618c6dceb906fcd067ae0f35c14 *R/row.col.page.fit.R
 3cae67adaf26cea211561af113e9441f *R/sample.map.R
 0044ddcecb9161e2d0478f76bb0b26c7 *R/scatterdens.R
-66b650e47b789e9690b2a8572ed09bc6 *R/setupClusters.R
+05d8f8ccd60a2a474ad21ed75b0feec8 *R/setupClusters.R
 e69e1ae73e338125cf35376bd5cc3040 *R/sex.symbols.R
 0057a755ce6da2f6378a7419309e14c8 *R/swfscMisc.R
 4177fa9f7d4ec1472c32e5ca0b72428c *R/transparent.R
 2ed696eb90a66594e223ad1d22783877 *R/uniform.test.R
 b7b273ed4dc20658153129120adb1c41 *R/which.nearest.R
 631047f0687086f7c27b5dfd20830394 *R/zero.pad.R
-fc550c9e7be30ee70f49cbba710ae0fe *README.md
+15aff64bdcc643a5d508777d82866280 *README.md
 5b40d56d323df1b1cfa47f0566a03e57 *man/affin.prop.Rd
 7f83c0f891375a6bdd807284455be6f5 *man/autoUnits.Rd
 591fc092288ec1bbd34fbdc98ac863ee *man/bearing.Rd
@@ -59,10 +55,6 @@ a048d612a97eae9d86a65c4b469c9211 *man/central.quantile.Rd
 5efaeb6c0f5697ae72ab407c16406e3d *man/convert.distance.Rd
 ed7a223410e45839c18795df0af23acb *man/copy.tri.Rd
 18e3ee5b53313e3434192cd001b31a67 *man/crossing.point.Rd
-6a77829a30854a586964523278e3130f *man/das.map.Rd
-019a3529296c9f0ad73f54727cfee00d *man/das.merge.acoustic.Rd
-9f68008e1809a66b90dc7a8aae666ceb *man/das.read.Rd
-db9b9e41db2017f3f368327f4f065472 *man/das.spp.freq.Rd
 5806f108b3b985870d5c35eea2e06f61 *man/datum.Rd
 865949addfd7f3c0cfdd750ed6f47328 *man/destination.Rd
 6ef7be72fe880535f603290927109ab4 *man/distance.Rd
@@ -70,7 +62,7 @@ dfe8be7d88ff1e4fb30fbd6d5eb14d18 *man/diversity.Rd
 4afc5580fa6f36837e512f966885d00b *man/fisher.method.p.Rd
 05a289a92340eec8a13e009ee6a86775 *man/geometric.mean.Rd
 54534e506d7cdceb77239eb0687af7b1 *man/ggBiplot.Rd
-fa9bf4f0f3db26dea354c57cb103be8a *man/harmonic.mean.Rd
+d7379db9dfcd746ab21b12868af23173 *man/harmonic.mean.Rd
 ac8f36a4a54f52c8a44555e24fe47df4 *man/isBetween.Rd
 a3c22ab0f0a34da46b7e4d2b3fbe0ed8 *man/lab.wid.Rd
 593e205223664aa430e29c2ee722934f *man/lat.lon.axes.Rd
@@ -81,7 +73,7 @@ d96a6df50db5094830acba1bb0ec546f *man/one.arg.Rd
 b91837c83a7a65c4c8d85836dad2a50c *man/pVal.Rd
 327044b2b50fb2db703cf4aa87d35712 *man/plotAssignments.Rd
 b81147535e47815116ecbd4bed07261f *man/round.Rd
-fefb40954740a2786b0f1c5a10043c83 *man/row.col.page.fit.Rd
+0d6b7cd8dbbfc293489172c85f65b86c *man/row.col.page.fit.Rd
 16b816866144c14c1a618e35e6d25cef *man/sample.map.Rd
 c684aaf9e4d00abdac0af8adf9a4af90 *man/scatterdens.Rd
 4ca6db1d2439f5d1f59bf3a8d89f0f04 *man/setupClusters.Rd

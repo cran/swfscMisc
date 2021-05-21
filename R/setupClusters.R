@@ -20,11 +20,12 @@ setupClusters <- function(num.cores = 1, max.cores = NULL) {
   if(max.cores < 1) max.cores <- 1
   num.cores <- min(num.cores, max.cores)
   if(num.cores > 1) {
-    cl.func <- ifelse(
-      .Platform$OS.type == "windows", 
-      parallel::makePSOCKcluster, 
-      parallel::makeForkCluster
-    )
-    cl.func(num.cores)
+    parallel::makePSOCKcluster(num.cores)
+    # cl.func <- ifelse(
+    #   .Platform$OS.type == "windows", 
+    #   parallel::makePSOCKcluster, 
+    #   parallel::makeForkCluster
+    # )
+    # cl.func(num.cores)
   } else NULL
 }

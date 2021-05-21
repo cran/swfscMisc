@@ -4,16 +4,22 @@
 \alias{harmonic.mean}
 \title{Harmonic Mean}
 \usage{
-harmonic.mean(x, na.rm = FALSE)
+harmonic.mean(x, w = NULL, na.rm = FALSE)
 }
 \arguments{
 \item{x}{a numeric vector.}
+
+\item{w}{an optional numerical vector of weights the same length as \code{x}.}
 
 \item{na.rm}{a logical value indicating whether NA values should be stripped 
 before the computation proceeds.}
 }
 \description{
 Calculate the harmonic mean of a set of numbers.
+}
+\note{
+If zeroes are present in \code{x}, function will return approximation
+  with a warning. In this case, weights will not be used.
 }
 \examples{
 x <- rlnorm(100)

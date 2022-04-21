@@ -58,7 +58,7 @@ plotAssignments <- function(
   i <- do.call(order, c(as.list(df), list(decreasing = TRUE)))
   df <- df[i, ] %>% 
     dplyr::mutate(id = 1:dplyr::n()) %>% 
-    tidyr::gather("pred", "prob", -.data$id, -.data$orig)
+    tidyr::pivot_longer(-c("id", "orig"), names_to = "pred", values_to = "prob")
   if(!is.null(freq.sep.line)) {
     levels(df$orig) <- paste0(
       names(freq), ifelse(freq.sep.line, "\n", " "), "(n = ", freq, ")"
@@ -85,7 +85,7 @@ plotAssignments <- function(
     ggplot2::scale_x_continuous(expand = c(0, 0)) +
     ggplot2::scale_y_continuous(expand = c(0, 0)) +
     ggplot2::facet_wrap(~ orig, scales = "free_x") +
-    ggplot2::ylab("Votes") +
+    ggplot2::ylab(ylab) +
     ggplot2::theme(
       legend.position = "top",
       text = ggplot2::element_text(size = 14),

@@ -4,10 +4,15 @@
 \alias{geometric.mean}
 \title{Geometric Mean}
 \usage{
-geometric.mean(x)
+geometric.mean(x, w = NULL, na.rm = FALSE)
 }
 \arguments{
 \item{x}{a numeric vector.}
+
+\item{w}{an optional numerical vector of weights the same length as \code{x}.}
+
+\item{na.rm}{a logical value indicating whether NA values should be stripped 
+before the computation proceeds.}
 }
 \description{
 Calculates the geometric mean of a vector.

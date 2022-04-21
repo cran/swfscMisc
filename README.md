@@ -68,12 +68,12 @@ devtools::install_github('ericarcher/swfscMisc')
     * copy.tri
     * crossing.point
     * diversity
-    * fisher.method.p
+    * distSmry
+    * fisher.p
     * geometric.mean
     * harmonic.mean
     * isBetween
     * na.count
-    * normalize
     * odds conversion (odds, invOdds, logOdds, invLogOdds)
     * one.arg
     * plotAssignments
@@ -81,14 +81,23 @@ devtools::install_github('ericarcher/swfscMisc')
     * ceiling, floor, trunc, round (.data.frame)
     * uniform.test
     * setupClusters
+    * sn.params
     * which.nearest
     * zero.pad
+    
 
-## version 1.5 (devel)
+## version 1.6 (devel)
+
+* reset setupClusters to choose correct function for OS
+* added `perpDist()` and `perpPt()`
+* added `distSmry()`
+* added `sn.params` functions for computing skew normal parameters and moments
+
+## version 1.5 (on CRAN)
 
 * removed das.* functions
 
-## version 1.4 (on CRAN)
+## version 1.4
 
 * added catSpatInterp for Categorical Spatial Interpolation (based on code by Timo Grossenbacher)
 * begin deprecation of das.* functions. to be removed in v1.5.

@@ -2,6 +2,7 @@
 #'
 #' SWFSC Miscellaneous Functions
 #' 
+#' @aliases swfscMisc-package
 #' @docType package
 #' @name swfscMisc
 #' @importFrom magrittr %>%

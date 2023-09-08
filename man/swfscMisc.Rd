@@ -3,6 +3,7 @@
 \docType{package}
 \name{swfscMisc}
 \alias{swfscMisc}
+\alias{swfscMisc-package}
 \title{\code{swfscMisc} package}
 \description{
 SWFSC Miscellaneous Functions

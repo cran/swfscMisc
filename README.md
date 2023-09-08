@@ -67,7 +67,6 @@ devtools::install_github('ericarcher/swfscMisc')
     * central.quantile
     * copy.tri
     * crossing.point
-    * diversity
     * distSmry
     * fisher.p
     * geometric.mean
@@ -85,19 +84,30 @@ devtools::install_github('ericarcher/swfscMisc')
     * which.nearest
     * zero.pad
     
+## Changelog
+    
+### version 1.6.5 (devel)
 
-## version 1.6 (devel)
+* removed `sample.maps()`
+* added `imdo()`
+* added `intersectingPoint()`
+* added ability to use `modeest::mlv()` to estimate mode in `distSmry()` 
+* fixed `pVal()` to handle NA and NaN values correctly
+* deprecating `diversity()`. New function in `sprex` package.
+* added `runjags2list()` to format posterior samples from `runjags::run.jags()`.
+
+### version 1.6 (on CRAN)
 
 * reset setupClusters to choose correct function for OS
 * added `perpDist()` and `perpPt()`
 * added `distSmry()`
 * added `sn.params` functions for computing skew normal parameters and moments
 
-## version 1.5 (on CRAN)
+### version 1.5
 
 * removed das.* functions
 
-## version 1.4
+### version 1.4
 
 * added catSpatInterp for Categorical Spatial Interpolation (based on code by Timo Grossenbacher)
 * begin deprecation of das.* functions. to be removed in v1.5.
@@ -105,39 +115,39 @@ devtools::install_github('ericarcher/swfscMisc')
 * fixed `plotAssignments()` to not change class names.
 * updated spatstat import
 
-## version 1.3
+### version 1.3
 
 * fixed plotAssignments to use facets and removed grids and space around panels
 * added setupClusters
 
-## version 1.2
+### version 1.2
 
 * Added rounding functions for data.frames.
 * Removed NEWS.md - changelog moved to README.md
 * Added `plotAssignments` function.
 
-## version 1.1
+### version 1.1
 
 * Added `autoUnits` function
 * Changed default arguments for `lat.range` and `lon.range` to `NULL` in `sample.map`. If not specified, the ranges will be set to the ranges of the `lat` and `lon`.
 
-## version 1.0.9
+### version 1.0.9
 
 * Added `transparent` function
 * Changed distance and destination functions to accept partial matches for method 
 of calculation, type of surface, and units
 
-## version 1.0.8
+### version 1.0.8
 
 * Fixed `das.read` to handle errors in position and suppress warnings about `NA`s
 during numerical conversions.
 * Fixed `das.map` to remove records with no position
 
-## version 1.0.7
+### version 1.0.7
 
 * Changed `isBetween` to accept a vector of numbers
 
-## version 1.0.6
+### version 1.0.6
 
 * Added NEWS.md
 * Added `diversity` function (moved from strataG package)

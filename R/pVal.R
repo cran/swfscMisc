@@ -18,5 +18,17 @@
 #' @export
 #' 
 pVal <- function(obs, null.dist) {
+  obs <- as.vector(obs)
+  if(length(obs) != 1) stop("'obs' must be a single value.")
+  if(is.na(obs) | is.nan(obs)) {
+    warning("'obs' is NA or NaN, NA returned.")
+    return(NA)
+  }
+  null.dist <- as.vector(null.dist)
+  to.remove <- is.nan(null.dist) | is.na(null.dist)
+  if(any(to.remove)) {
+    warning("NA or NaN values in 'null.dist' have been removed")
+  }
+  null.dist <- null.dist[!to.remove]
   (sum(null.dist >= obs) + 1) / (length(null.dist) + 1)
 }

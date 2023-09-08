@@ -36,7 +36,8 @@
 #'
 #' op <- par(mar = c(3, 5, 5, 5) + 0.1, oma = c(1, 1, 1, 1))
 #' 
-#' maps::map("mapdata::worldHires", fill = TRUE, col = "wheat3", xlim = lon.range, ylim = lat.range)
+#' plot.new()
+#' plot.window(xlim = lon.range, ylim = lat.range)
 #' points(-117.24, 32.86, pch = 19, col = "red")
 #' polygon(cart.earth, border = "red", lwd = 3)
 #' lat.lon.axes(n = 3)

@@ -7,7 +7,7 @@
 diversity(x)
 }
 \arguments{
-\item{x}{charcter or numeric vector or factor}
+\item{x}{character or numeric vector or factor}
 }
 \description{
 Calculate unbiased estimate of diversity for a vector of items

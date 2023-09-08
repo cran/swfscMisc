@@ -15,7 +15,13 @@
 #' @export
 #' 
 zero.pad <- function(x) {
+  if(!is.numeric(x)) stop("'x' must be a numeric vector")
   is.whole <- abs(x - round(x)) < .Machine$double.eps ^ 0.5
-  if(!all(is.whole)) stop("'x' must be a vector of integers")
-  formatC(x, digits = floor(log10(max(x))), flag = "0", mode = "integer")
+  if(!all(is.whole, na.rm = TRUE)) stop("'x' must be a vector of integers")
+  digits <- floor(log10(max(x, na.rm = TRUE)))
+  sapply(x, function(xi) {
+    if(is.na(xi)) xi else {
+      formatC(xi, digits = digits, flag = "0", mode = "integer")
+    }
+  })
 }

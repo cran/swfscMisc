@@ -21,8 +21,8 @@ ggBiplot <- function(pca, x = 1, y = 2, mult.fac = 0.8, arrow.size = 1.5, label.
   if(is.numeric(x)) x <- colnames(pca$scores)[x]
   if(is.numeric(y)) y <- colnames(pca$scores)[y]
   
-  scores <- as.data.frame(pca$scores) %>% 
-    dplyr::select(x, y) %>% 
+  scores <- as.data.frame(pca$scores) |>  
+    dplyr::select(x, y) |> 
     stats::setNames(c("x", "y"))
   
   mult <- min(
@@ -30,10 +30,10 @@ ggBiplot <- function(pca, x = 1, y = 2, mult.fac = 0.8, arrow.size = 1.5, label.
     (max(scores[, 2]) - min(scores[, 2]) / diff(range(pca$loadings[, y])))
   ) * mult.fac
   
-  ldngs <- data.frame(cbind(pca$loadings))[, c(x, y)] %>% 
-    stats::setNames(c("x", "y")) %>% 
-    tibble::rownames_to_column("id") %>% 
-    dplyr::select(.data$id, .data$x, .data$y) %>% 
+  ldngs <- data.frame(cbind(pca$loadings))[, c(x, y)] |> 
+    stats::setNames(c("x", "y")) |> 
+    tibble::rownames_to_column("id") |> 
+    dplyr::select(.data$id, .data$x, .data$y) |> 
     dplyr::mutate(
       x = .data$x * mult,
       y = .data$y * mult,

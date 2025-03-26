@@ -8,3 +8,15 @@
 \description{
 SWFSC Miscellaneous Functions
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/EricArcher/swfscMisc}
+  \item Report bugs at \url{https://github.com/EricArcher/swfscMisc/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Eric Archer \email{eric.archer@noaa.gov}
+
+}

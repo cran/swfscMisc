@@ -47,56 +47,71 @@ devtools::install_github('ericarcher/swfscMisc')
     * convert.angle
     * convert.distance
 
-* Mapping functions:
-    * lat.lon.axes
-    * sample.map
-  
 * Plotting functions:
     * braces
     * catSpatInterp Categorical Spatial Interpolation
     * color.name
     * lab.wid
+    * lat.lon.axes
     * row.col.page.fit
+    * ggBiplot
     * scatterdens
     * scatterhist
     * sex.symbols
-  
+
+* Distribution functions:
+    * betaParams
+    * central.quantile
+    * distSmry
+    * fisher.p
+    * gammaParams
+    * pVal
+    * sn.params
+    * uniform.test
+
 * Miscellaneous functions:
     * affin.prop
+    * autoUnits
     * box.area
     * central.quantile
     * copy.tri
     * crossing.point
-    * distSmry
-    * fisher.p
     * geometric.mean
     * harmonic.mean
     * isBetween
+    * month2Season
+    * mcmc2list
     * na.count
     * odds conversion (odds, invOdds, logOdds, invLogOdds)
     * one.arg
     * plotAssignments
-    * pVal
     * ceiling, floor, trunc, round (.data.frame)
-    * uniform.test
+    * runjags2list
+    * stan2list
     * setupClusters
-    * sn.params
     * which.nearest
     * zero.pad
-    
+  
 ## Changelog
     
-### version 1.6.5 (devel)
+### version 1.6.6 (devel)
 
-* removed `sample.maps()`
+* fixed bug in `runjags2list()` if variable in monitor vector wasn't in model
+* added `betaParams()` and `gammaParams()`
+* removed `diversity()` - now in `sprex` package
+    
+### version 1.6.5 (on CRAN)
+
+* removed `sample.map()`
 * added `imdo()`
 * added `intersectingPoint()`
 * added ability to use `modeest::mlv()` to estimate mode in `distSmry()` 
 * fixed `pVal()` to handle NA and NaN values correctly
 * deprecating `diversity()`. New function in `sprex` package.
 * added `runjags2list()` to format posterior samples from `runjags::run.jags()`.
+* corrected package name alias documentation for CRAN
 
-### version 1.6 (on CRAN)
+### version 1.6
 
 * reset setupClusters to choose correct function for OS
 * added `perpDist()` and `perpPt()`

@@ -72,9 +72,18 @@ sn.delta <- function(shape) shape / sqrt(1 + shape ^ 2)
 #' @export
 #' 
 sn.m0 <- function(shape) {
-  mu.z <- sqrt(2 / pi) * sn.delta(shape)
-  sigma.z <- sqrt(1 - mu.z ^ 2)
-  term.1 <- ((sn.skewness(shape) * sigma.z) / 2)
-  term.2 <-  (sign(shape) / 2) * exp((-2 * pi) / abs(shape))
-  mu.z - term.1 - term.2
+  # mu.z <- sqrt(2 / pi) * sn.delta(shape)
+  # sigma.z <- sqrt(1 - mu.z ^ 2)
+  # term.1 <- ((sn.skewness(shape) * sigma.z) / 2)
+  # term.2 <-  (sign(shape) / 2) * exp((-2 * pi) / abs(shape))
+  # mu.z - term.1 - term.2
+  
+  delta <- sn.delta(shape)
+  term.1 <- sqrt(2 / pi) * delta
+  term.2.1 <- 1 - (pi / 4)
+  term.2.2 <- 1 - ((2 * delta ^ 2) / pi)
+  term.2 <- term.2.1 * (term.1 ^ 3) / term.2.2
+  term.3.1 <- (-2 * pi) / abs(shape)
+  term.3 <- sign(shape) * exp(term.3.1) / 2
+  term.1 - term.2 - term.3
 }

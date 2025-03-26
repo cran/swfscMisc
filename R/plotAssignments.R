@@ -56,8 +56,8 @@ plotAssignments <- function(
   
   df <- data.frame(orig = orig, probs, check.names = FALSE)
   i <- do.call(order, c(as.list(df), list(decreasing = TRUE)))
-  df <- df[i, ] %>% 
-    dplyr::mutate(id = 1:dplyr::n()) %>% 
+  df <- df[i, ] |> 
+    dplyr::mutate(id = 1:dplyr::n()) |> 
     tidyr::pivot_longer(-c("id", "orig"), names_to = "pred", values_to = "prob")
   if(!is.null(freq.sep.line)) {
     levels(df$orig) <- paste0(
